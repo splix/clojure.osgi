@@ -45,11 +45,6 @@
 	<build>
 		<resources>
 			<resource>
-				<directory>META-INF</directory>
-				<targetPath>META-INF</targetPath>
-			</resource>
-
-			<resource>
 				<directory>src/main/clojure</directory>
 			</resource>
 		</resources>
@@ -89,6 +84,14 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+            <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-eclipse-plugin</artifactId>
+                 <configuration>
+                    <pde>true</pde>
+                 </configuration>
+            </plugin>   			
 		</plugins>
 	</build>
 
