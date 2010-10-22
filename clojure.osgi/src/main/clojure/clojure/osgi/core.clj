@@ -48,8 +48,14 @@
 
 (defn bundle-name []
   (.getSymbolicName *bundle*)
-) 
+)
 
+(defn bundle-class-loader [bundle]
+  (proxy [java.lang.ClassLoader] []
+    (getResource [name]
+      (.getResource bundle name))
+    (getResourceAsStream [name]
+      (.openStream (.getResource bundle name)))))
 
 
 
